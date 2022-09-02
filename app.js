@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-const { userSchema , userModel } = require('./models.js');
+const { userSchema , userModel } = require('./users.js');
 
 // Connection URL: 'mongodb://localhost:27017';
 
@@ -14,7 +14,7 @@ const mongoConnect = mongoose.connect('mongodb://127.0.0.1:27017/katmaDB')
   console.log(`OH NO! MONGO CONNECTION ERROR!`);
   console.log(err);
 })
-var katmaDB = mongoose.
+//var katmaDB = mongoose.
 
 /* Adding Documents to the Collection: userData
    _id is the randomly generated Object ID, the userId is a randomized String, the date is the current Date, 
