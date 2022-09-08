@@ -1,5 +1,7 @@
 const mongoose = require("mongoose")
 const { userSchema , userModel } = require('./users.js');
+const { machineSchema , machineModel } = require('./machines.js');
+const { operatorSchema , operatorModel } = require('./operators.js');
 
 // Connection URL: 'mongodb://localhost:27017';
 
@@ -21,7 +23,7 @@ const mongoConnect = mongoose.connect('mongodb://127.0.0.1:27017/katmaDB')
    randomInt is a random integer between 0 and 100. It is possible to add the key: "text" with a string in the Document.
    _id, userID and date are required, randomInt and text aren't required.*/
 
-setInterval(async function dbFiller(){
+/* setInterval(async function dbFiller(){
   const userdoc = {
     "_id" : mongoose.Types.ObjectId(),
     "userId" : Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15),
@@ -33,3 +35,31 @@ setInterval(async function dbFiller(){
     console.log("A document was inserted with the userId: " + user.userId);
   });  
 }, 5000);
+*/
+
+//machinetest
+/*
+machine = new machineModel ( {
+  "machineId" : "firstMachine",
+  "date" : new Date(new Date().setTime(Date.now() + 2 * 60 * 60 * 1000)),
+  "chemicalLevel" : 3,
+  "waterLevel" : 4
+});
+machine.save(function (err, doc) {
+  console.log("A document was inserted with the machineId: " + machine.machineId);
+}); 
+*/ 
+
+//operatortest
+operator = new operatorModel ( {
+    operatorId : "firstOperator",
+    name : "Shell",
+    telephone : 12345,
+    email : "bla@gmail.com",
+    useCount : 12,
+    capactiy : 0.9,
+    ROI : 1.4,
+});
+operator.save(function (err, doc) {
+  console.log("A document was inserted with the operatorId: " + operator.operatorId);
+}); 

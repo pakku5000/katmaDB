@@ -7,7 +7,11 @@ const userSchema = new mongoose.Schema({
     userId : {type : String, required : true},
     date : {type : Date, required : true},
     randomInt : {type : Number, required : false},
-    text : {type : String, required : false}
+    text : {type : String, required : false},
+    licensePlate : {type : String, required : false},
+    container : {type : Object, required : false}, // {storage: Number, model: string}
+    cleaningCertificate: {type : Object, required : false}, // {date : Date, certificate : String, ...}
+    validUntil : {type : Date, required : false},
 });
 
 //The model is like a Class to make users with the above defined Schema
