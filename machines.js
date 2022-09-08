@@ -7,8 +7,10 @@ const machineSchema = new mongoose.Schema({
     chemicalLevel : {type : Number, required : false},
     waterLevel : {type : Number, required : false},
     operator : {type : Object, required : false}, //{name : String, telephone : number, email: String, ...}
-    location : {type : Object, required : false}, //{city : String, street: String, houseNumber: Number, PLZ : Number, ...}
+    location : {type : Object, required : false}, //{city : String, street: String, houseNumber: Number, PLZ : Number, longitude : Number, latitude : Number, ...}
     operational : {type : Boolean, required : false},
+    maintenanceList : {type : Object, required : false} //Liste der Wartungen
+    userList : {type : Object, required : false} // List of userId's that used the machine
 });
 
 //The model is like a Class to make machines with the above defined Schema
