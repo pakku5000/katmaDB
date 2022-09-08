@@ -12,6 +12,7 @@ const userSchema = new mongoose.Schema({
     container : {type : Object, required : false}, // {storage: Number, model: string}
     cleaningCertificate: {type : Object, required : false}, // {date : Date, certificate : String, ...}
     validUntil : {type : Date, required : false},
+    
 });
 
 //The model is like a Class to make users with the above defined Schema
